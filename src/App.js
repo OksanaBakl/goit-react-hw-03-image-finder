@@ -31,7 +31,6 @@ class App extends Component {
     }
     if (this.state.imagesList.length - prevState.imagesList.length === 12) {
       this.setState({ button: true });
-      // this.scrollPageDown();
     }
   }
 
@@ -56,10 +55,8 @@ class App extends Component {
           return;
         } else if (imagesList.length <= 12) {
           this.setState({ button: false });
-          // this.scrollPageDown();
         }
         if (this.state.page > 1) {
-          // this.setState({ button: false });
           this.scrollPageDown();
         }
         this.setState(prevState => ({
@@ -69,7 +66,6 @@ class App extends Component {
         if (this.state.page > 2) {
           this.scrollPageDown();
         }
-        // // this.scrollPageDown();
       })
       .catch(error => toast(error))
       .finally(() => {
