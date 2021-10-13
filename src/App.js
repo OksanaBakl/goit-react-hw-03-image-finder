@@ -55,6 +55,7 @@ class App extends Component {
           return;
         } else if (imagesList.length <= 12) {
           this.setState({ button: false });
+          this.scrollPageDown();
         }
         this.setState(prevState => ({
           imagesList: [...prevState.imagesList, ...imagesList],
@@ -63,7 +64,6 @@ class App extends Component {
       })
       .catch(error => toast(error))
       .finally(() => {
-        this.scrollPageDown();
         this.setState({ loading: false });
       });
   };
